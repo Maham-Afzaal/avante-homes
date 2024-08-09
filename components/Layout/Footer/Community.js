@@ -6,14 +6,6 @@ import styles from './Footer.module.css'
 const Community = () => {
   return (
     <Box
-      height={{ xs: "567px", sm: "823px" }}
-      width={"100%"}
-      // sx={{
-      //   background: {
-      //     xs: `url(${image2.src}) bottom no-repeat 100% 100%`,
-      //     sm: `url(${image.src}) center`,
-      //   },
-      // }}
       className={styles.footerBackground}
     >
       <Stack alignItems={"center"} px={"6px"}>

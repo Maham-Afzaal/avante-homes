@@ -19,7 +19,7 @@ const quickLinks = [
   {
     key: "display-homes",
     title: "Display Homes",
-    href: homeLinks,
+    href: homeLinks.displayHomes,
   },
   {
     key: "house-and-land",
@@ -57,7 +57,7 @@ const financeLinks = [
   {
     key: "keystart-home-loans",
     title: "Keystart Home Loans",
-    href: homeLinks.keystartHomeLoans,
+    href: homeLinks.keyStartHomeLoans,
   },
 ];
 

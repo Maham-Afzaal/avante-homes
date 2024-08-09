@@ -26,6 +26,7 @@ import SsidChartIcon from "@mui/icons-material/SsidChart";
 import RecordVoiceOverIcon from "@mui/icons-material/RecordVoiceOver";
 import CloseIcon from "@mui/icons-material/Close";
 import { homeLinks } from "@/utils/routes";
+import { useRouter } from "next/router";
 
 const MenuList = [
   {
@@ -67,10 +68,12 @@ const MenuList = [
 ];
 
 const Header = () => {
+
+  const router = useRouter();
   const [open, setOpen] = React.useState(false);
 
   const handleChange = (event, newValue) => {
-    console.log(newValue);
+    router.push(newValue);
   };
 
   const toggleDrawer = (newOpen) => () => {

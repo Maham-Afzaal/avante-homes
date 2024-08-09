@@ -19,5 +19,5 @@ export const homeLinks = {
   howMuchCanIBorrow: "/how-much-can-i-borrow",
   rentConverter: "/rent-converter",
   governmentGrantsAndSchemes: "/government-grants-and-schemes",
-  keystartHomeLoans: "/keystart-home-loans",
+  keyStartHomeLoans: "/keystart-home-loans",
 };

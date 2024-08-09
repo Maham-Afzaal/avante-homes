@@ -14,7 +14,7 @@ import {
   Drawer,
   useScrollTrigger,
 } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { styled, useTheme } from "@mui/material/styles";
 import Container from "@/components/common/Container";
 import React from "react";
 import Image from "next/image";
@@ -28,6 +28,7 @@ import RecordVoiceOverIcon from "@mui/icons-material/RecordVoiceOver";
 import CloseIcon from "@mui/icons-material/Close";
 import { homeLinks } from "@/utils/routes";
 import { useRouter } from "next/router";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const MenuList = [
   {
@@ -70,16 +71,17 @@ const MenuList = [
 
 const Header = (props) => {
   const { children, window } = props;
+
+  const theme = useTheme();
   const router = useRouter();
   const [open, setOpen] = React.useState(false);
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
     disableHysteresis: true,
-    threshold: 70,
+    threshold: isMobile ? 50 : 70,
   });
-
-  console.log("triger", trigger);
 
   const handleChange = (event, newValue) => {
     router.push(newValue);

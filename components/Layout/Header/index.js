@@ -168,7 +168,7 @@ const Header = () => {
             </Stack>
           </Container>
         </Box>
-        <Box sx={{ padding: "8px 0px", backgroundColor: "white !important" }}>
+        <Box sx={{ padding: "22px 0px", backgroundColor: "white !important" }}>
           <Container>
             <Stack
               direction={"row"}

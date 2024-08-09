@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
   return (
     <Stack>
       <Header />
-      <Box sx={{mt: '126px'}}>{children}</Box>
+      <Box sx={{ mt: { xs: "72px", md: "126px" } }}>{children}</Box>
       <Footer />
     </Stack>
   );

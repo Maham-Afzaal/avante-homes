@@ -1,5 +1,16 @@
+import Layout from "@/components/Layout";
 import "@/styles/globals.css";
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "@/core/theme";
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <div>
+      <ThemeProvider theme={theme}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
+    </div>
+  );
 }

@@ -5,9 +5,9 @@ import Footer from "./Footer";
 
 const Layout = ({ children }) => {
   return (
-    <Stack>
+    <Stack sx={{ position: "relative" }}>
       <Header />
-      <Box sx={{ mt: { xs: "72px", md: "126px" } }}>{children}</Box>
+      <Box sx={{ mt: { xs: "72px", md: "126px" }}}>{children}</Box>
       <Footer />
     </Stack>
   );

@@ -12,6 +12,7 @@ import {
   AppBar,
   IconButton,
   Drawer,
+  useScrollTrigger,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Container from "@/components/common/Container";
@@ -67,10 +68,18 @@ const MenuList = [
   },
 ];
 
-const Header = () => {
-
+const Header = (props) => {
+  const { children, window } = props;
   const router = useRouter();
   const [open, setOpen] = React.useState(false);
+
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+    disableHysteresis: true,
+    threshold: 70,
+  });
+
+  console.log("triger", trigger);
 
   const handleChange = (event, newValue) => {
     router.push(newValue);
@@ -168,7 +177,14 @@ const Header = () => {
             </Stack>
           </Container>
         </Box>
-        <Box sx={{ padding: "22px 0px", backgroundColor: "white !important" }}>
+        <Box
+          sx={{
+            padding: "22px 0px",
+            backgroundColor: trigger
+              ? "white !important"
+              : "transparent !important",
+          }}
+        >
           <Container>
             <Stack
               direction={"row"}

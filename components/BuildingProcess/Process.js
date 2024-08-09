@@ -38,7 +38,6 @@ const Process = () => {
         <Grid container spacing={4}>
           <Grid item xs={12} sm={6} md={3} lg={3}>
             <Card
-              boxShadow={"0px 20px 40px 0px #CDCDCD40"}
               sx={{ width: "100%", borderRadius: "10px" }}
             >
               <CardMedia sx={{ height: 213, position: "relative" }}>

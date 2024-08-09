@@ -136,7 +136,6 @@ const ContactForm = () => {
                     id="standard-basic"
                     label="Your Message"
                     multiline
-                    maxRows={4}
                     rows={2}
                     variant="filled"
                     sx={{

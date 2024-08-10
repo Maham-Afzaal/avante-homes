@@ -1,27 +1,32 @@
 import React from "react";
-import { Box, Container, Stack, Typography, Avatar } from "@mui/material";
+import { Box, Stack, Typography, Avatar } from "@mui/material";
+import MuiContainer from "@mui/material/Container";
+import Container from "@/components/common/Container";
 import Community from "./Community";
 import Links from "./Links";
+import ContactForm from "./ContactForm";
 
 const Footer = () => {
   return (
-    <Box>
-      <Container
+    <Box sx={{ zIndex: 1000 }}>
+      <Container>
+        <ContactForm />
+      </Container>
+      <MuiContainer
         sx={{ maxWidth: { md: "100%", lg: "1440px" }, p: "0px !important" }}
       >
         <Community />
-      </Container>
+      </MuiContainer>
       <Box
         sx={{
           backgroundColor: "primary.main",
         }}
       >
-        <Container
+        <MuiContainer
           sx={{ maxWidth: { md: "100%", lg: "1440px" }, p: "0px !important" }}
         >
           <Links />
-        </Container>
-
+        </MuiContainer>
       </Box>
     </Box>
   );

@@ -1,6 +1,5 @@
 import { Typography, Box, Stack, Grid } from "@mui/material";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Image from "next/image";
@@ -8,14 +7,14 @@ import React from "react";
 
 const Process = () => {
   return (
-    <Box py={{ xs: 6, md: 10 }}>
+    <Box pt={{ xs: 6, md: 10 }} pb={0}>
       <Stack alignItems={"center"} justifyContent={"center"} gap={2}>
         <Typography
           className="font-montserrat"
           component={"h1"}
           fontWeight={600}
           variant="h2"
-          fontSize={{ xs: "42px", sm: "48px", md: "54px", lg: "60" }}
+          fontSize={{ xs: "42px", sm: "48px", md: "54px", lg: "60px" }}
           color={"primary"}
           textAlign={"center"}
         >
@@ -34,12 +33,10 @@ const Process = () => {
           start to finish.
         </Typography>
       </Stack>
-      <Stack py={{ xs: 4, md: 8 }}>
+      <Stack pt={{ xs: 4, md: 8 }} >
         <Grid container spacing={4}>
           <Grid item xs={12} sm={6} md={3} lg={3}>
-            <Card
-              sx={{ width: "100%", borderRadius: "10px" }}
-            >
+            <Card sx={{ width: "100%", borderRadius: "10px" }}>
               <CardMedia sx={{ height: 213, position: "relative" }}>
                 <Image
                   src="/process1.jpeg"

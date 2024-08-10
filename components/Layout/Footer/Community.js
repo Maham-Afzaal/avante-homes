@@ -1,7 +1,5 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
 import React from "react";
-import image from "@/public/footer-park.svg";
-import image2 from "@/public/footer-park-mobile.svg";
 import styles from './Footer.module.css'
 const Community = () => {
   return (

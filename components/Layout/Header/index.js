@@ -236,7 +236,7 @@ const Header = (props) => {
               </Stack>
               <Stack>
                 <Button
-                  sx={{ display: { xs: "none", md: "block" } }}
+                  sx={{ display: { xs: "none", md: "block" }, width: "155px" }}
                   size="large"
                   variant="contained"
                   color="secondary"
@@ -344,8 +344,9 @@ const Header = (props) => {
                     backgroundColor: "secondary.main",
                     color: "secondary.light",
                     borderRadius: "5px",
-                    height: "29px",
-                    width: "29px",
+                    height: "16px",
+                    width: "16px",
+                    p: "6px",
                   }}
                 >
                   <PhoneIcon />
@@ -368,12 +369,13 @@ const Header = (props) => {
                   size="small"
                   sx={{
                     backgroundColor: "transparent",
-                    borderColor: "secondary.main",
-                    border: "1px solid",
-                    color: "secondary.main",
+                    borderColor: "common.white",
+                    border: "1px solid black",
+                    color: "common.black",
                     borderRadius: "5px",
-                    height: "29px",
-                    width: "29px",
+                    height: "18px",
+                    width: "18px",
+                    p: "4px",
                   }}
                 >
                   <EmailIcon />

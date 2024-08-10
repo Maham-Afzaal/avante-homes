@@ -1,5 +1,4 @@
 import BuildingProcess from "@/components/BuildingProcess";
-import { Height } from "@mui/icons-material";
 import React from "react";
 import { Box } from "@mui/material";
 
@@ -8,7 +7,7 @@ const buildingProcess = () => {
     <div>
       <Box
         sx={{
-          height: "267px",
+          height: { xs: "538px", md: "267px" },
           width: "100%",
           background: "linear-gradient(0deg, #FFFFFF 0%, #EFF2FF 100%)",
           position: "absolute",
@@ -16,7 +15,7 @@ const buildingProcess = () => {
           zIndex: 0,
         }}
       ></Box>
-      <Box sx={{ zIndex: 1000, position: 'relative' }}>
+      <Box sx={{ zIndex: 1000, position: "relative" }}>
         <BuildingProcess />
       </Box>
     </div>

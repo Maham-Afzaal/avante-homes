@@ -1,16 +1,16 @@
 import React from "react";
 import { Box } from "@mui/material";
-import ClientExperience from "@/components/ClientExperience";
 import Head from "next/head";
+import AboutUs from "@/components/AboutUs";
 
-const TheClientExperience = () => {
+const About = () => {
   return (
     <div>
        <Head>
-        <title>Client Experience - Avante Homes</title>
-        <meta name="description" content="Client Experience - Avante Homes" />
-        <meta property="og:title" content="Client Experience - Avante Homes" />
-        <meta property="og:description" content="Client Experience - Avante Homes" />
+        <title>About us - Avante Homes</title>
+        <meta name="description" content="About us - Avante Homes" />
+        <meta property="og:title" content="About us - Avante Homes" />
+        <meta property="og:description" content="About us - Avante Homes" />
         <meta property="og:image" content="https://example.com/image.jpg" />
       </Head>
       <Box
@@ -24,10 +24,10 @@ const TheClientExperience = () => {
         }}
       ></Box>
       <Box sx={{ zIndex: 1000, position: "relative" }}>
-        <ClientExperience />
+        <AboutUs />
       </Box>
     </div>
   );
 };
 
-export default TheClientExperience;
+export default About;

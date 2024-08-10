@@ -1,10 +1,18 @@
 import BuildingProcess from "@/components/BuildingProcess";
 import React from "react";
 import { Box } from "@mui/material";
+import Head from "next/head";
 
 const buildingProcess = () => {
   return (
     <div>
+      <Head>
+        <title>The Building process - Avante Homes</title>
+        <meta name="description" content="The Building process - Avante Homes" />
+        <meta property="og:title" content="The Building process - Avante Homes" />
+        <meta property="og:description" content="The Building process - Avante Homes" />
+        <meta property="og:image" content="https://example.com/image.jpg" />
+      </Head>
       <Box
         sx={{
           height: { xs: "538px", md: "267px" },

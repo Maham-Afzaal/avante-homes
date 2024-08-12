@@ -29,6 +29,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { homeLinks } from "@/utils/routes";
 import { useRouter } from "next/router";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Link from "next/link";
 
 const MenuList = [
   {
@@ -194,12 +195,14 @@ const Header = (props) => {
               justifyContent={"space-between"}
             >
               <Stack>
-                <Image
-                  src="/avante-home-logo.svg"
-                  alt="My Image"
-                  width={133}
-                  height={50}
-                />
+                <Link href={"/"}>
+                  <Image
+                    src="/avante-home-logo.svg"
+                    alt="avante home logo"
+                    width={133}
+                    height={50}
+                  />
+                </Link>
               </Stack>
               <Stack sx={{ display: { xs: "none", md: "block" } }}>
                 <Box sx={{ maxWidth: { xs: 320, sm: 900 } }}>
@@ -269,12 +272,14 @@ const Header = (props) => {
               direction={"row"}
               justifyContent={"space-between"}
             >
-              <Image
-                src="/avante-home-logo.svg"
-                alt="My Image"
-                width={70}
-                height={50}
-              />
+              <Link href={'/'}>
+                <Image
+                  src="/avante-home-logo.svg"
+                  alt="avante home logo"
+                  width={70}
+                  height={50}
+                />
+              </Link>
               <IconButton
                 color="primary"
                 onClick={toggleDrawer(false)}

@@ -14,7 +14,7 @@ const FinanceOptions = () => {
         component={"h2"}
         textAlign={"center"}
         fontSize={{ xs: "32px", sm: "36px", md: "38px", lg: "42px" }}
-        mb={4}
+        pb={6}
         display={{xs:'none',sm:'block'}}
       >
         Finance options
@@ -29,7 +29,7 @@ const FinanceOptions = () => {
           <Grid
             item
             xs={12}
-            md={6}
+            sm={6}
             sx={{ display: { xs: "none", sm: "block" } }}
           >
             <Image
@@ -41,7 +41,7 @@ const FinanceOptions = () => {
               objectFit="cover"
             />
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6}>
             <Stack spacing={2} sx={{ pr: { xs: 0, md: 4 } }}>
               <Typography
                 className="font-montserrat"
@@ -49,6 +49,7 @@ const FinanceOptions = () => {
                 fontWeight={500}
                 variant="body2"
                 color={"text"}
+                pt={{xs:4}}
               >
                 First Home Finance
               </Typography>
@@ -90,9 +91,9 @@ const FinanceOptions = () => {
             sx={{
               mt: 12,
               position: "absolute",
-              top: { xs: "23%", md: "17%" },
+              top: { xs: "26%",sm: "20%", md: "17%" },
               right: 0,
-              width: { xs: "20%", md: "20%" },
+              width: { xs: "70px", md: "20%" },
               maxWidth: "165px",
               height: "auto",
               zIndex:'-1',
@@ -106,7 +107,7 @@ const FinanceOptions = () => {
           alignItems="center"
           justifyContent={"center"}
         >
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6}>
             <Stack spacing={2} sx={{ pr: { xs: 2, md: 4 } }}>
               <Typography
                 className="font-montserrat"
@@ -151,7 +152,7 @@ const FinanceOptions = () => {
           <Grid
             item
             xs={12}
-            md={6}
+            sm={6}
             sx={{ display: { xs: "none", sm: "block" } }}
           >
             <Image
@@ -175,7 +176,7 @@ const FinanceOptions = () => {
           <Grid
             item
             xs={12}
-            md={6}
+            sm={6}
             sx={{ display: { xs: "none", sm: "block" } }}
             position={"relative"}
           >
@@ -188,7 +189,7 @@ const FinanceOptions = () => {
               objectFit="cover"
             />
           </Grid>
-          <Grid item xs={12} md={6} position={"relative"} zIndex={2}>
+          <Grid item xs={12} sm={6} position={"relative"} zIndex={2}>
             <Stack spacing={2} sx={{ pr: { xs: 2, md: 4 } }}>
               <Typography
                 className="font-montserrat"
@@ -238,7 +239,7 @@ const FinanceOptions = () => {
                 position: "absolute",
                 top: "80%",
                 right: 10,
-                width: { xs: "20%", md: "20%" },
+                width: { xs: "90px", md: "20%" },
                 maxWidth: "130px",
                 height: "auto",
                 display: { xs: "block", sm: "none" },

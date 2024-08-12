@@ -69,9 +69,13 @@ const Packages = () => {
   return (
     <Box pt={{ xs: 0, md: 10 }} pb={{ xs: 4, md: 14 }} bgcolor={"primary.main"}>
       <Container>
-        <Box>
+        <Box sx={{ position: "relative", zIndex: 99 }}>
           <Stack>
-            <Grid spacing={{ xs: 2, md: 5 }} container direction={{ xs: "column", md: "row" }}>
+            <Grid
+              spacing={{ xs: 2, md: 5 }}
+              container
+              direction={{ xs: "column", md: "row" }}
+            >
               <Grid item xs={12} md={6}>
                 <Stack gap={{ xs: 2, md: 5 }}>
                   <Typography

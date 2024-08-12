@@ -1,6 +1,7 @@
 import { Stack, Box, Typography, Divider } from "@mui/material";
 import React, { useState } from "react";
 import background from "../../public/home_background.svg";
+import backgroundMobile from "../../public/home_background_mobile.svg";
 import MuiContainer from "@mui/material/Container";
 import Container from "../common/Container";
 import SearchFrom from "./SearchFrom";
@@ -51,10 +52,10 @@ const YourFuture = () => {
           >
             <Box
               sx={{
-                height: "400px",
+                height: { xs: "450px", sm: "400px" },
                 background: {
                   // xs: `url(${backgroundMobile.src}) center`,
-                  md: `url(${background.src}) bottom no-repeat`,
+                  sm: `url(${background.src}) bottom no-repeat`,
                 },
                 backgroundPosition: { xs: "0 0", md: "150px 40px" },
               }}
@@ -90,18 +91,69 @@ const YourFuture = () => {
             <Box
               width="222px"
               height="431px"
-              sx={{ position: "absolute", bottom: "27px", left: 0 }}
+              sx={{
+                position: "absolute",
+                bottom: "27px",
+                left: 0,
+                display: { xs: "none", md: "block" },
+                transition: "0.5s all",
+              }}
+              className="slideInLeft"
             >
               <HomeCouple1 />
             </Box>
             <Box
               width="309px"
               height="432px"
-              sx={{ position: "absolute", bottom: "27px", right: 0 }}
+              sx={{
+                position: "absolute",
+                bottom: "27px",
+                right: 0,
+                display: { xs: "none", md: "block" },
+              }}
+              className="slideInRight"
             >
               <HomeCouple2 />
             </Box>
           </MuiContainer>
+        </Stack>
+        <Stack display={{ xs: "flex", sm: "none" }}>
+          <Box
+            sx={{
+              height: "260px",
+              background: {
+                xs: `url(${backgroundMobile.src}) bottom no-repeat`,
+                sm: `none`,
+              },
+              position: "relative",
+              // backgroundPosition: { xs: "0 0", md: "150px 40px" },
+            }}
+          >
+            <Divider
+              sx={{
+                position: "absolute",
+                bottom: "0px",
+                width: "100%",
+                borderColor: "#DDE2F2",
+                zIndex: 9,
+                borderWidth: "1px",
+              }}
+            />
+            <Box
+              width="104px"
+              height="201px"
+              sx={{ position: "absolute", bottom: "0px", left: 24 }}
+            >
+              <HomeCouple1 />
+            </Box>
+            <Box
+              width="144px"
+              height="201px"
+              sx={{ position: "absolute", bottom: "0px", right: 24 }}
+            >
+              <HomeCouple2 />
+            </Box>
+          </Box>
         </Stack>
       </Stack>
     </Box>

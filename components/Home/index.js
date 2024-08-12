@@ -7,6 +7,7 @@ import ExperienceMore from "./ExperienceMore";
 import Box from "@mui/material/Box";
 import Services from "./Services";
 import Packages from "./Packages";
+import ClientStories from "./ClientStories";
 
 const HomePage = () => {
   return (
@@ -21,6 +22,7 @@ const HomePage = () => {
       </Box>
       <Services />
       <Packages />
+      <ClientStories />
     </div>
   );
 };

@@ -1,8 +1,12 @@
 import { Box, Grid, Paper, Typography, Stack, Card } from "@mui/material";
 import React from "react";
 import TreesBackground from "../../public/trees-background.svg";
+import TreesBackgroundMobile from "../../public/trees-background-mobile.svg";
 import BlueBackground from "../../public/blue-grass-background.svg";
+import BlueBackgroundMobile from "../../public/blue-grass-background-mobile.svg";
 import PersonsBackground from "../../public/persons-background.svg";
+import PersonsBackgroundMobile1 from "../../public/persons-background-mobile-1.svg";
+import PersonsBackgroundMobile2 from "../../public/persons-background-mobile-2.svg";
 import Container from "../common/Container";
 
 const data = [
@@ -450,7 +454,8 @@ const Services = () => {
           pb: 40,
           background: {
             // xs: `url(${backgroundMobile.src}) center`,
-            xs: `url(${PersonsBackground.src}) no-repeat bottom, url(${TreesBackground.src}) no-repeat bottom`,
+            xs: `url(${PersonsBackgroundMobile1.src}) no-repeat bottom left, url(${PersonsBackgroundMobile2.src}) no-repeat bottom right, url(${TreesBackgroundMobile.src}) repeat-x bottom`,
+            sm: `url(${PersonsBackground.src}) no-repeat bottom, url(${TreesBackground.src}) no-repeat bottom`,
           },
           position: "relative",
         }}
@@ -458,13 +463,14 @@ const Services = () => {
         <Box
           sx={{
             background: {
-              // xs: `url(${backgroundMobile.src}) center`,
-              xs: `url(${BlueBackground.src}) no-repeat bottom`,
+              xs: `url(${BlueBackgroundMobile.src}) repeat-x bottom`,
+              sm: `url(${BlueBackground.src}) no-repeat bottom`,
             },
             width: "100%",
             height: "100%",
             position: "absolute",
-            bottom: "-50px",
+            bottom: { xs: "-100px", sm: "-50px" },
+            zIndex: 9
           }}
         ></Box>
         <Box>

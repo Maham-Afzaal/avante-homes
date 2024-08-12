@@ -50,6 +50,17 @@ const theme = createTheme({
       fontFamily: "Inter",
     },
   },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        // Name of the slot
+        root: {
+          // Some CSS
+          textTransform: 'capitalize'
+        },
+      },
+    },
+  },
 });
 
 export default theme;

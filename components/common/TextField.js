@@ -1,23 +1,23 @@
 import React from "react";
 import MuiTextField from "@mui/material/TextField";
-
+import { omit } from "lodash";
 const TextField = (props) => {
-
   return (
     <MuiTextField
       variant="filled"
       sx={{
         "&:hover": {
-          backgroundColor: "transparent",
+          backgroundColor: "transparent !important",
         },
         "& .MuiInputLabel-root": {
           left: "-11px",
         },
         "& .MuiFilledInput-root": {
-          backgroundColor: "transparent",
+          backgroundColor: "transparent !important",
         },
+        ...props?.sx,
       }}
-      {...props}
+      {...omit(props, "sx")}
     />
   );
 };

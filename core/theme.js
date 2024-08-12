@@ -1,9 +1,10 @@
 import { createTheme } from "@mui/material/styles";
 
-const colours = {
+const colors = {
   blue: "#002C57",
   white: "#FFFFFF",
   pink: "#F44A51",
+  lightGrayBg: "#F7F8FC",
   textGray: "#748390",
   textDark: "#181F25",
   text: "#181F25",
@@ -12,27 +13,28 @@ const colours = {
 const theme = createTheme({
   palette: {
     common: {
-      textGray: colours.textGray,
-      textDark: colours.textDark,
+      textGray: colors.textGray,
+      textDark: colors.textDark,
+      lightGrayBg: colors.lightGrayBg,
     },
     primary: {
-      main: colours.blue,
-      contrastText: colours.white,
-      light: colours.white,
+      main: colors.blue,
+      contrastText: colors.white,
+      light: colors.white,
     },
     secondary: {
-      main: colours.pink,
-      contrastText: colours.white,
-      light: colours.white,
+      main: colors.pink,
+      contrastText: colors.white,
+      light: colors.white,
     },
     white: {
-      main: colours.white,
-      contrastText: colours.white,
-      light: colours.white,
+      main: colors.white,
+      contrastText: colors.white,
+      light: colors.white,
     },
     text: {
-      primary: colours.textDark,
-      secondary: colours.textGray,
+      primary: colors.textDark,
+      secondary: colors.textGray,
     },
   },
   typography: {

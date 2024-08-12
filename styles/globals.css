@@ -11,3 +11,21 @@
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
 }
+
+.react-multi-carousel-track {
+  gap: 20px;
+  padding-bottom: 46px !important;
+  background-color: transparent !important;
+}
+
+.react-multi-carousel-dot--active button {
+  background: #F44A51 !important;
+  border: none !important;
+}
+
+.react-multi-carousel-dot button {
+  border: none !important;
+  background: #FFDBDD;
+  height: 8px;
+  width: 8px;
+}

@@ -3,8 +3,8 @@ import React from "react";
 import Link from "next/link";
 import MuiLink from "@mui/material/Link";
 import TextField from "../common/TextField";
-import background from "@/public/about-background-1.svg";
-import backgroundMobile from "@/public/about-background-1-mobile.svg";
+import background from "@/public/finance-background-1.svg";
+import backgroundMobile from "@/public/finance-background-mobile.svg";
 import Container from "../common/Container";
 import Selected from "../common/Select";
 import { useState } from "react";
@@ -19,19 +19,23 @@ const FinancePortal = () => {
   ];
   return (
     <Box
-      pt={{ xs: 50, md: 10 }}
-      pb={{ xs: 6, md: 4 }}
-      height={{ xs: "100%", md: "764px" }}
+      pt={{ xs: 50, md: 0 }}
+      pb={{ xs: 6, md: 8 }}
+      height={{ xs: "100%", md: "730px" }}
       sx={{
         background: {
           xs: `url(${backgroundMobile.src}) center`,
-          md: `url(${background.src}) center`,
+          md: `url(${background.src}) bottom no-repeat`,
         },
-        backgroundPosition: { xs: "0 0", md: "0 -135px" },
+        // backgroundPosition: { xs: "0 0", md: "0 -135px" },
       }}
     >
-      <Container sx={{ height: "100%" }}>
-        <Stack height={"78%"} alignItems={"center"} justifyContent={"flex-end"}>
+      <Container>
+        <Stack
+          height={"100%"}
+          alignItems={"center"}
+          justifyContent={"flex-end"}
+        >
           <Grid
             container
             alignItems={{ xs: "center", md: "center" }}
@@ -46,6 +50,7 @@ const FinancePortal = () => {
                 variant="h3"
                 component={"h2"}
                 fontSize={{ xs: "32px", sm: "34px", md: "38px", lg: "42px" }}
+                pt={{ xs: 0, md: 8 }}
               >
                 Finance Health Check
               </Typography>
@@ -73,13 +78,14 @@ const FinancePortal = () => {
                     }}
                   >
                     <Stack gap={1}>
-                      <Stack direction={{ xs: "column", md: "row" }} gap={1}>
+                      <Stack direction={{ xs: "column", md: "row" }}>
                         <Typography
                           className="font-montserrat"
                           color={"common.black"}
                           variant="h3"
                           component={"h3"}
                           fontSize={"26px"}
+                          mb={1}
                         >
                           Get Your Finance Health Check
                         </Typography>
@@ -112,7 +118,7 @@ const FinancePortal = () => {
                           fullWidth={true}
                           type="number"
                         />
-                        
+
                         <Selected
                           label="I am looking to build in Perth"
                           options={optionsList}

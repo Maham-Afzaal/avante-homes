@@ -1,12 +1,7 @@
 import React from "react";
 import Container from "@/components/common/Container";
 
-import {
-  Stack,
-  Box,
-  Typography,
-  Grid,
-} from "@mui/material";
+import { Stack, Box, Typography, Grid } from "@mui/material";
 
 const steps = [
   {
@@ -38,119 +33,119 @@ const ThreeSteps = () => {
           position: "absolute",
           top: "80px",
           left: "49%",
-          width: {sm:'100%',md:"100vw"},
+          width: { sm: "100%", md: "100vw" },
           transform: "translateX(-50%)",
           zIndex: 1,
         }}
       />
       {/* <Container> */}
-        <Stack width={"100%"} gap={4} sx={{ position: "relative", zIndex: 2 }}>
-          <Stack width={"100%"} alignItems={"center"} justifyContent={"center"}>
-            <Stack
-              sx={{
-                width: "100%",
-                maxWidth: "846px",
-                zIndex: 99,
-                position: "relative",
-              }}
-            >
-              <Typography
-                color={"common.black"}
-                variant="h3"
-                component={"h2"}
-                textAlign={"center"}
-                fontSize={{ xs: "32px", sm: "36px", md: "38px", lg: "42px" }}
-              >
-                Where to start? 3 easy steps.
-              </Typography>
-            </Stack>
-          </Stack>
-          <Grid
-            container
-            spacing={{ xs: 3, md: 5 }}
-            position={"relative"}
-            zIndex={2}
+      <Stack width={"100%"} gap={4} sx={{ position: "relative", zIndex: 2 }}>
+        <Stack width={"100%"} alignItems={"center"} justifyContent={"center"}>
+          <Stack
+            sx={{
+              width: "100%",
+              maxWidth: "846px",
+              zIndex: 99,
+              position: "relative",
+            }}
           >
-            <Box
-              component="img"
-              src="VerticalDotLine.svg"
-              alt="Background"
-              sx={{
-                display: { xs: "block", sm: "none" },
-                position: "absolute",
-                top: 0,
-                left: "50%",
-                width: "100vw", 
-                transform: "translateX(-50%)",
-                zIndex: -1,
-              }}
-            />
+            <Typography
+              className="font-montserrat"
+              color={"common.black"}
+              variant="h3"
+              component={"h2"}
+              textAlign={"center"}
+              fontSize={{ xs: "32px", sm: "36px", md: "38px", lg: "42px" }}
+            >
+              Where to start? 3 easy steps.
+            </Typography>
+          </Stack>
+        </Stack>
+        <Grid
+          container
+          spacing={{ xs: 3, md: 5 }}
+          position={"relative"}
+          zIndex={2}
+        >
+          <Box
+            component="img"
+            src="VerticalDotLine.svg"
+            alt="Background"
+            sx={{
+              display: { xs: "block", sm: "none" },
+              position: "absolute",
+              top: 0,
+              left: "50%",
+              width: "100vw",
+              transform: "translateX(-50%)",
+              zIndex: -1,
+            }}
+          />
 
-            {steps.map((item, index) => (
-              <Grid item xs={12} sm={4} key={index} position={"relative"}>
-                <Box
-                  mt={{ xs: 1,md:2 }}
-                  sx={{
-                    p: { xs: 0,  md: 2 , lg: 4 },
-                  }}
-                >
-                  <Stack gap={2} alignItems={{ xs: "center", sm: "start" }}>
+          {steps.map((item, index) => (
+            <Grid item xs={12} sm={4} key={index} position={"relative"}>
+              <Box
+                mt={{ xs: 1, md: 2 }}
+                sx={{
+                  p: { xs: 0, md: 2, lg: 4 },
+                }}
+              >
+                <Stack gap={2} alignItems={{ xs: "center", sm: "start" }}>
+                  <Stack
+                    alignItems={"center"}
+                    justifyContent={"center"}
+                    sx={{
+                      border: "1px solid #ECECEC",
+                      borderRadius: "20px",
+                      width: "68px",
+                      height: "68px",
+                      boxShadow: "0px 20px 40px 0px #6861661A",
+                      background:
+                        "linear-gradient(336.71deg, #FFFFFF -1.85%, #FFFFFF 92.81%)",
+                    }}
+                    mb={{ xs: 0, sm: 2 }}
+                  >
                     <Stack
+                      width={"20px"}
+                      height={"20px"}
                       alignItems={"center"}
                       justifyContent={"center"}
-                      sx={{
-                        border: "1px solid #ECECEC",
-                        borderRadius: "20px",
-                        width: "68px",
-                        height: "68px",
-                        boxShadow: "0px 20px 40px 0px #6861661A",
-                        background:
-                          "linear-gradient(336.71deg, #FFFFFF -1.85%, #FFFFFF 92.81%)",
-                      }}
-                      mb={{ xs: 0, sm: 2 }}
                     >
-                      <Stack
-                        width={"20px"}
-                        height={"20px"}
-                        alignItems={"center"}
-                        justifyContent={"center"}
+                      <Typography
+                        className="font-montserrat"
+                        fontSize={{ xs: "16px", sm: "18px", md: "20px" }}
+                        fontWeight={600}
+                        variant="body2"
+                        color={"secondary"}
                       >
-                        <Typography
-                          className="font-montserrat"
-                          fontSize={{ xs: "16px", sm: "18px", md: "20px" }}
-                          fontWeight={600}
-                          variant="body2"
-                          color={"secondary"}
-                        >
-                          {index + 1}
-                        </Typography>
-                      </Stack>
+                        {index + 1}
+                      </Typography>
                     </Stack>
-                    <Typography
-                      className="font-montserrat"
-                      color={"common.black"}
-                      variant="h3"
-                      component={"h3"}
-                      fontSize={"26px"}
-                    >
-                      {item.title}
-                    </Typography>
-                    <Typography
-                      className="font-montserrat"
-                      color={"text.secondary"}
-                      variant="subtitle1"
-                      component={"p"}
-                      fontSize={"14px"}
-                      textAlign={{ xs: "center", sm: "start" }}
-                    >
-                      {item.description}
-                    </Typography>
                   </Stack>
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
-        </Stack>
+                  <Typography
+                    className="font-montserrat"
+                    color={"common.black"}
+                    variant="h3"
+                    component={"h3"}
+                    fontSize={"26px"}
+                  >
+                    {item.title}
+                  </Typography>
+                  <Typography
+                    color={"text.secondary"}
+                    variant="subtitle1"
+                    component={"p"}
+                    fontSize={"14px"}
+                    textAlign={{ xs: "center", sm: "start" }}
+                  >
+                    {item.description}
+                  </Typography>
+                </Stack>
+              </Box>
+            </Grid>
+          ))}
+        </Grid>
+      </Stack>
       {/* </Container> */}
     </Box>
   );

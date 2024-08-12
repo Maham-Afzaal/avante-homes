@@ -43,7 +43,7 @@ const ThreeSteps = () => {
           zIndex: 1,
         }}
       />
-      <Container>
+      {/* <Container> */}
         <Stack width={"100%"} gap={4} sx={{ position: "relative", zIndex: 2 }}>
           <Stack width={"100%"} alignItems={"center"} justifyContent={"center"}>
             <Stack
@@ -151,7 +151,7 @@ const ThreeSteps = () => {
             ))}
           </Grid>
         </Stack>
-      </Container>
+      {/* </Container> */}
     </Box>
   );
 };

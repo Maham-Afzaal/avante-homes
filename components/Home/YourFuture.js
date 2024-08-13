@@ -111,7 +111,7 @@ const YourFuture = () => {
                 right: 0,
                 display: { xs: "none", md: "block" },
               }}
-              className="slideInRight"
+              // className="slideInRight"
             >
               <HomeCouple2 />
             </Box>

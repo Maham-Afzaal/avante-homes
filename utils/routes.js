@@ -20,4 +20,6 @@ export const homeLinks = {
   rentConverter: "/rent-converter",
   governmentGrantsAndSchemes: "/government-grants-and-schemes",
   keyStartHomeLoans: "/keystart-home-loans",
+
+  resolveFinance: "/resolve-finance",
 };

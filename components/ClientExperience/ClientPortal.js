@@ -82,7 +82,6 @@ const ClientPortal = () => {
                           Client Portal
                         </Typography>
                         <Typography
-                          className="font-montserrat"
                           color={"text.secondary"}
                           variant="subtitle1"
                           component={"p"}

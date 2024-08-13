@@ -496,7 +496,7 @@ const HouseDetail = () => {
                 className="font-montserrat"
                 color={"common.black"}
                 variant="subtitle1"
-                component={"p"}
+                component={"h2"}
                 fontSize={{ xs: "22px" }}
                 fontWeight={500}
                 sx={{

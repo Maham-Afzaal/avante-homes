@@ -9,11 +9,14 @@ import {
   MenuItem,
   InputLabel,
   IconButton,
+  colors,
 } from "@mui/material";
 import TextField from "../common/TextField";
 import SearchIcon from "@mui/icons-material/Search";
 import HomeDog from "@/assets/icons/HomeDog";
 import HomeCat from "@/assets/icons/HomeCat";
+import SelectField from "../common/SelectField";
+import { fromPairs } from "lodash";
 
 const SearchFrom = () => {
   const [formData, setFormData] = React.useState({
@@ -26,6 +29,10 @@ const SearchFrom = () => {
     const { name, value } = event.target;
     console.log("data", name, value);
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+  };
+
+  const handleClear = () => {
+    setFormData((prevFormData) => ({ ...prevFormData, bedrooms: "" }));
   };
 
   const handleSubmit = (event) => {
@@ -68,7 +75,7 @@ const SearchFrom = () => {
           bottom: { xs: "auto", sm: "58px" },
           top: { xs: "-37px", sm: "auto" },
           right: { xs: 50, sm: 30, md: 100 },
-          animation: 'myAnim 2s ease 0s 1 normal forwards'
+          animation: "myAnim 2s ease 0s 1 normal forwards",
         }}
         // className="slideInDown2"
       >
@@ -100,6 +107,11 @@ const SearchFrom = () => {
                     paddingTop: "6px",
                     pl: "0px",
                   },
+                  input: {
+                    "&::placeholder": {
+                      fontStyle: "italic",
+                    },
+                  },
                 }}
               />
             </FormControl>
@@ -122,23 +134,40 @@ const SearchFrom = () => {
                     paddingTop: "6px",
                     pl: "0px",
                   },
+                  input: {
+                    "&::placeholder": {
+                      fontStyle: "italic",
+                    },
+                  },
                 }}
               />
             </FormControl>
           </Stack>
           <Stack width={"100%"}>
             <InputLabel
-              sx={{ color: "text.primary", mb: "5px" }}
+              sx={{ color: "text.primary" }}
               id="demo-simple-select-standard-label"
             >
               Beds
             </InputLabel>
-            <Select
+            <SelectField
+              value={formData?.bedrooms}
+              onChange={handleInputChange}
+              formData={formData}
+              onClear={handleClear}
+              handleUpdateMobile={(value) =>
+                setFormData((prevFormData) => ({
+                  ...prevFormData,
+                  bedrooms: value,
+                }))
+              }
+            />
+            {/* <Select
               labelid="demo-simple-select-standard-label"
               id="demo-simple-select-standard"
+              name="bedrooms"
               value={formData.bedrooms}
               onChange={handleInputChange}
-              name="bedrooms"
               label="Where"
               placeholder="Set a range"
               variant="standard"
@@ -189,7 +218,7 @@ const SearchFrom = () => {
                 />
                 5+ Bedrooms
               </MenuItem>
-            </Select>
+            </Select> */}
           </Stack>
           <Stack width={"fit-content"}>
             <Box>

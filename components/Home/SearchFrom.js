@@ -154,71 +154,27 @@ const SearchFrom = () => {
               value={formData?.bedrooms}
               onChange={handleInputChange}
               formData={formData}
-              onClear={handleClear}
+              onClear={() =>
+                setFormData((prevFormData) => ({
+                  ...prevFormData,
+                  bedrooms: "",
+                }))
+              }
               handleUpdateMobile={(value) =>
                 setFormData((prevFormData) => ({
                   ...prevFormData,
                   bedrooms: value,
                 }))
               }
+              placeholder="All Bedrooms"
+              placeholder2="Select Bedrooms"
+              options={[
+                { title: "All Bedrooms", value: "All Bedrooms" },
+                { title: "3+ Bedrooms", value: "3+ Bedrooms" },
+                { title: "4+ Bedrooms", value: "4+ Bedrooms" },
+                { title: "5+ Bedrooms", value: "5+ Bedrooms" },
+              ]}
             />
-            {/* <Select
-              labelid="demo-simple-select-standard-label"
-              id="demo-simple-select-standard"
-              name="bedrooms"
-              value={formData.bedrooms}
-              onChange={handleInputChange}
-              label="Where"
-              placeholder="Set a range"
-              variant="standard"
-              fullWidth={true}
-              displayEmpty
-              renderValue={(selected) => {
-                if (selected.length === 0) {
-                  return <Box sx={{ color: "#9DA1A3" }}>All Bedrooms</Box>;
-                }
-
-                return selected;
-              }}
-              sx={{}}
-            >
-              <MenuItem disabled value="" sx={{ color: "text.secondary" }}>
-                All Bedrooms
-              </MenuItem>
-
-              <MenuItem value={"All Bedrooms"}>
-                <Radio
-                  size="small"
-                  color="secondary"
-                  checked={formData.bedrooms.indexOf("All Bedrooms") > -1}
-                />
-                All Bedrooms
-              </MenuItem>
-              <MenuItem value={"3+ Bedrooms"}>
-                <Radio
-                  size="small"
-                  color="secondary"
-                  checked={formData.bedrooms.indexOf("3+ Bedrooms") > -1}
-                />
-                3+ Bedrooms
-              </MenuItem>
-              <MenuItem value={"4+ Bedrooms"}>
-                <Radio
-                  size="small"
-                  color="secondary"
-                  checked={formData.bedrooms.indexOf("4+ Bedrooms") > -1}
-                />
-                4+ Bedrooms
-              </MenuItem>
-              <MenuItem value={"5+ Bedrooms"}>
-                <Radio
-                  size="small"
-                  color="secondary"
-                  checked={formData.bedrooms.indexOf("5+ Bedrooms") > -1}
-                />
-                5+ Bedrooms
-              </MenuItem>
-            </Select> */}
           </Stack>
           <Stack width={"fit-content"}>
             <Box>

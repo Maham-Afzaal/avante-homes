@@ -31,7 +31,7 @@ const MenuProps = {
       width: "auto",
       border: "1px solid",
       borderTop: "none",
-      //   display: { xs: "none", md: "flex" },
+      // display: { xs: "none", sm: "block" },
       marginTop: { xs: 2, md: 4 },
       backgroundColor: "background.default",
       backgroundImage: "none",
@@ -60,6 +60,9 @@ export default function SelectField({
   onChange,
   onClear,
   handleUpdateMobile,
+  placeholder,
+  placeholder2,
+  options,
 }) {
   const theme = useTheme();
   const [isOpen, setOpen] = React.useState(false); // State to track whether the select menu is open
@@ -75,17 +78,16 @@ export default function SelectField({
   };
 
   const handleClose = () => {
-    if (isMobile) {
-      setOpen(false);
-    } else {
-      setOpenMobile(false);
-    }
+    setOpen(false);
+    setOpenMobile(false);
   };
 
   React.useEffect(() => {
     if (isMobile == false) {
       setOpenMobile(false);
+      setOpen(true);
     }
+    setOpen(false);
   }, [isMobile]);
 
   return (
@@ -121,7 +123,7 @@ export default function SelectField({
                   fontSize: "16px",
                 }}
               >
-                <em>All Bedrooms</em>
+                <em>{placeholder}</em>
               </Box>
             );
           }
@@ -142,6 +144,7 @@ export default function SelectField({
             width={"100%"}
             justifyContent="space-between"
             alignItems="center"
+            gap={1}
           >
             <Typography
               color={"common.black"}
@@ -150,7 +153,7 @@ export default function SelectField({
               fontSize={"14px"}
               fontWeight={600}
             >
-              Select Bedrooms
+              {placeholder2}
             </Typography>
 
             <Link
@@ -159,45 +162,25 @@ export default function SelectField({
               variant="subtitle1"
               fontSize={"12px"}
               fontWeight={300}
-              onClick={onClear}
+              onClick={() => {
+                handleClose();
+                onClear();
+              }}
             >
               Clear
             </Link>
           </Stack>
         </ListSubheader>
-        <MenuItem sx={{ p: 0 }} value={"All Bedrooms"}>
-          <Radio
-            size="small"
-            color="secondary"
-            checked={formData.bedrooms?.indexOf("All Bedrooms") > -1}
-          />
-          All Bedrooms
-        </MenuItem>
-        <MenuItem sx={{ p: 0 }} value={"3+ Bedrooms"}>
-          <Radio
-            size="small"
-            color="secondary"
-            checked={formData.bedrooms?.indexOf("3+ Bedrooms") > -1}
-          />
-          3+ Bedrooms
-        </MenuItem>
-        <MenuItem sx={{ p: 0 }} value={"4+ Bedrooms"}>
-          <Radio
-            size="small"
-            color="secondary"
-            checked={formData.bedrooms?.indexOf("4+ Bedrooms") > -1}
-          />
-          4+ Bedrooms
-        </MenuItem>
-        <MenuItem sx={{ p: 0 }} value={"5+ Bedrooms"}>
-          <Radio
-            size="small"
-            color="secondary"
-            checked={formData.bedrooms?.indexOf("5+ Bedrooms") > -1}
-          />
-          5+ Bedrooms
-        </MenuItem>
-        {/* </CustomizedMenuItem> */}
+        {options.map((item, index) => (
+          <MenuItem key={index} sx={{ p: 0 }} value={item.value}>
+            <Radio
+              size="small"
+              color="secondary"
+              checked={formData.bedrooms?.indexOf(item.title) > -1}
+            />
+            {item.title}
+          </MenuItem>
+        ))}
       </Select>
 
       {isOpenMobile && (
@@ -223,7 +206,7 @@ export default function SelectField({
                 fontSize={"14px"}
                 fontWeight={600}
               >
-                Select Bedrooms
+                {placeholder2}
               </Typography>
               <Stack
                 direction={"row"}
@@ -238,8 +221,8 @@ export default function SelectField({
                   fontSize={"12px"}
                   fontWeight={300}
                   onClick={() => {
-                    onClear();
                     handleClose();
+                    onClear();
                   }}
                 >
                   Clear
@@ -251,70 +234,23 @@ export default function SelectField({
               </Stack>
             </Stack>
           </ListSubheader>
-          <MenuItem
-            onClick={() => {
-              handleClose();
-              handleUpdateMobile("All Bedrooms");
-            }}
-            sx={{ p: 0, minHeight: "36px" }}
-            value={"All Bedrooms"}
-          >
-            <Radio
-              size="small"
-              color="secondary"
-              sx={{ pl: 0 }}
-              checked={formData.bedrooms?.indexOf("All Bedrooms") > -1}
-            />
-            All Bedrooms
-          </MenuItem>
-          <MenuItem
-            onClick={() => {
-              handleClose();
-              handleUpdateMobile("3+ Bedrooms");
-            }}
-            sx={{ p: 0, minHeight: "36px" }}
-            value={"3+ Bedrooms"}
-          >
-            <Radio
-              size="small"
-              color="secondary"
-              sx={{ pl: 0 }}
-              checked={formData.bedrooms?.indexOf("3+ Bedrooms") > -1}
-            />
-            3+ Bedrooms
-          </MenuItem>
-          <MenuItem
-            onClick={() => {
-              handleClose();
-              handleUpdateMobile("4+ Bedrooms");
-            }}
-            sx={{ p: 0, minHeight: "36px" }}
-            value={"4+ Bedrooms"}
-          >
-            <Radio
-              size="small"
-              color="secondary"
-              sx={{ pl: 0 }}
-              checked={formData.bedrooms?.indexOf("4+ Bedrooms") > -1}
-            />
-            4+ Bedrooms
-          </MenuItem>
-          <MenuItem
-            onClick={() => {
-              handleClose();
-              handleUpdateMobile("5+ Bedrooms");
-            }}
-            sx={{ p: 0, minHeight: "36px" }}
-            value={"5+ Bedrooms"}
-          >
-            <Radio
-              size="small"
-              color="secondary"
-              sx={{ pl: 0 }}
-              checked={formData.bedrooms?.indexOf("5+ Bedrooms") > -1}
-            />
-            5+ Bedrooms
-          </MenuItem>
+          {options.map((item, index) => (
+            <MenuItem
+              onClick={() => {
+                handleClose();
+                handleUpdateMobile("All Bedrooms");
+              }}
+              sx={{ p: 0, minHeight: "36px" }}
+              key={index}
+            >
+              <Radio
+                size="small"
+                color="secondary"
+                checked={formData.bedrooms?.indexOf(item.title) > -1}
+              />
+              {item.title}
+            </MenuItem>
+          ))}
         </Stack>
       )}
     </FormControl>

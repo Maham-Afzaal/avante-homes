@@ -191,7 +191,7 @@ const BootstrapInput = styled(FilledInput)(({ theme }) => ({
     // borderColor: theme.palette.primary.main,
     // color: theme.palette.text.primary,
     fontSize: 15,
-    padding: "6px 12px 8px 0px",
+    padding: "6px 8px 8px 0px",
     transition: "1s ease-in",
     // Use the system font instead of the default Roboto font.
     fontFamily: ["Inter"].join(","),

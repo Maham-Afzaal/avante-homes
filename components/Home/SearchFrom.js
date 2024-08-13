@@ -134,7 +134,7 @@ const SearchFrom = () => {
           </Stack>
           <Stack width={"100%"}>
             <InputLabel
-              sx={{ color: "text.primary", mb: "5px" }}
+              sx={{ color: "text.primary" }}
               id="demo-simple-select-standard-label"
             >
               Beds

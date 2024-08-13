@@ -19,6 +19,7 @@ import SaveIcon from "@mui/icons-material/Save";
 import EqualizerIcon from "@mui/icons-material/Equalizer";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import { BorderColor } from "@mui/icons-material";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -63,7 +64,7 @@ export default function SelectField({
   const theme = useTheme();
   const [isOpen, setOpen] = React.useState(false); // State to track whether the select menu is open
   const [isOpenMobile, setOpenMobile] = React.useState(false); // State to track whether the select menu is open
-  const isMobile = useMediaQuery('(min-width:600px)');
+  const isMobile = useMediaQuery("(min-width:600px)");
 
   const handleOpen = () => {
     if (isMobile) {
@@ -80,6 +81,12 @@ export default function SelectField({
       setOpenMobile(false);
     }
   };
+
+  React.useEffect(() => {
+    if (isMobile == false) {
+      setOpenMobile(false);
+    }
+  }, [isMobile]);
 
   return (
     <FormControl color="secondary" sx={{ width: { xs: "100%", md: 260 } }}>
@@ -120,6 +127,7 @@ export default function SelectField({
           }
           return selected;
         }}
+        sx={{ display: isOpenMobile ? "none" : "flex" }}
         MenuProps={MenuProps}
         onClose={handleClose}
         onOpen={handleOpen}
@@ -195,7 +203,12 @@ export default function SelectField({
       {isOpenMobile && (
         <Stack display={{ xs: "flex", sm: "none" }}>
           <ListSubheader
-            sx={{ paddingX: "12px", paddingY: "4px", pb: "6px", pl: 0, pt: 2 }}
+            sx={{
+              pb: "6px",
+              pl: 0,
+              pr: 0,
+              pt: 2,
+            }}
           >
             <Stack
               direction={"row"}
@@ -212,20 +225,30 @@ export default function SelectField({
               >
                 Select Bedrooms
               </Typography>
-
-              <Link
-                component={"p"}
-                color={"secondary.main"}
-                variant="subtitle1"
-                fontSize={"12px"}
-                fontWeight={300}
-                onClick={() => {
-                  onClear();
-                  handleClose();
-                }}
+              <Stack
+                direction={"row"}
+                alignItems={"center"}
+                justifyContent={"center"}
+                spacing={3}
               >
-                Clear
-              </Link>
+                <Link
+                  component={"p"}
+                  color={"secondary.main"}
+                  variant="subtitle1"
+                  fontSize={"12px"}
+                  fontWeight={300}
+                  onClick={() => {
+                    onClear();
+                    handleClose();
+                  }}
+                >
+                  Clear
+                </Link>
+                <KeyboardArrowUpIcon
+                  onClick={handleClose}
+                  sx={{ fontSize: 22 }}
+                />
+              </Stack>
             </Stack>
           </ListSubheader>
           <MenuItem

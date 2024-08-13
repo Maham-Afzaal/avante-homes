@@ -91,7 +91,7 @@ const FinancePortal = () => {
                         </Typography>
                       </Stack>
                       <Stack gap={1}>
-                        <Stack direction={"row"} gap={1}>
+                      <Stack direction={{xs:"column", sm:"row"}} gap={1}>
                           <TextField
                             id="firstName"
                             label="First Name"

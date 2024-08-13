@@ -138,7 +138,7 @@ export default function SelectField({
         size="small"
         inputProps={{ "aria-label": "Without label" }}
       >
-        <ListSubheader sx={{ paddingX: "12px", paddingY: "4px", pb: "6px" }}>
+        <ListSubheader sx={{ paddingX: "16px", paddingY: "8px", pb: "6px", pr : '20px' }}>
           <Stack
             direction={"row"}
             width={"100%"}
@@ -172,7 +172,7 @@ export default function SelectField({
           </Stack>
         </ListSubheader>
         {options.map((item, index) => (
-          <MenuItem key={index} sx={{ p: 0 }} value={item.value}>
+          <MenuItem key={index} sx={{ p: 0, paddingX: "8px", paddingY: "2px", backgroundColor: 'transparent !important' }} value={item.value}>
             <Radio
               size="small"
               color="secondary"

@@ -4,7 +4,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Box from "@mui/material/Box";
 import ListSubheader from "@mui/material/ListSubheader";
-import { styled } from "@mui/material/styles";
+import { styled, useTheme } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
 import {
   IconButton,
@@ -13,6 +13,7 @@ import {
   Typography,
   Link,
   Radio,
+  useMediaQuery,
 } from "@mui/material";
 import SaveIcon from "@mui/icons-material/Save";
 import EqualizerIcon from "@mui/icons-material/Equalizer";
@@ -22,12 +23,14 @@ import { BorderColor } from "@mui/icons-material";
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
 const MenuProps = {
+  //   open: { xs: false, md: false },
   PaperProps: {
     sx: {
       maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
       width: "auto",
       border: "1px solid",
       borderTop: "none",
+      //   display: { xs: "none", md: "flex" },
       marginTop: { xs: 2, md: 4 },
       backgroundColor: "background.default",
       backgroundImage: "none",
@@ -50,20 +53,33 @@ const InputProps = {
   borderTopRightRadius: "8px",
 };
 
-export default function SelectField({ formData, value, onChange, onClear }) {
+export default function SelectField({
+  formData,
+  value,
+  onChange,
+  onClear,
+  handleUpdateMobile,
+}) {
+  const theme = useTheme();
   const [isOpen, setOpen] = React.useState(false); // State to track whether the select menu is open
-
-  const [personName, setPersonName] = React.useState([]);
+  const [isOpenMobile, setOpenMobile] = React.useState(false); // State to track whether the select menu is open
+  const isMobile = useMediaQuery('(min-width:600px)');
 
   const handleOpen = () => {
-    setOpen(true);
+    if (isMobile) {
+      setOpen(true);
+    } else {
+      setOpenMobile(true);
+    }
   };
 
   const handleClose = () => {
-    setOpen(false);
+    if (isMobile) {
+      setOpen(false);
+    } else {
+      setOpenMobile(false);
+    }
   };
-
-  // console.log("permutationsDetail", permutationsDetail)
 
   return (
     <FormControl color="secondary" sx={{ width: { xs: "100%", md: 260 } }}>
@@ -175,6 +191,109 @@ export default function SelectField({ formData, value, onChange, onClear }) {
         </MenuItem>
         {/* </CustomizedMenuItem> */}
       </Select>
+
+      {isOpenMobile && (
+        <Stack display={{ xs: "flex", sm: "none" }}>
+          <ListSubheader
+            sx={{ paddingX: "12px", paddingY: "4px", pb: "6px", pl: 0, pt: 2 }}
+          >
+            <Stack
+              direction={"row"}
+              width={"100%"}
+              justifyContent="space-between"
+              alignItems="center"
+            >
+              <Typography
+                color={"common.black"}
+                variant="subtitle1"
+                component={"p"}
+                fontSize={"14px"}
+                fontWeight={600}
+              >
+                Select Bedrooms
+              </Typography>
+
+              <Link
+                component={"p"}
+                color={"secondary.main"}
+                variant="subtitle1"
+                fontSize={"12px"}
+                fontWeight={300}
+                onClick={() => {
+                  onClear();
+                  handleClose();
+                }}
+              >
+                Clear
+              </Link>
+            </Stack>
+          </ListSubheader>
+          <MenuItem
+            onClick={() => {
+              handleClose();
+              handleUpdateMobile("All Bedrooms");
+            }}
+            sx={{ p: 0, minHeight: "36px" }}
+            value={"All Bedrooms"}
+          >
+            <Radio
+              size="small"
+              color="secondary"
+              sx={{ pl: 0 }}
+              checked={formData.bedrooms?.indexOf("All Bedrooms") > -1}
+            />
+            All Bedrooms
+          </MenuItem>
+          <MenuItem
+            onClick={() => {
+              handleClose();
+              handleUpdateMobile("3+ Bedrooms");
+            }}
+            sx={{ p: 0, minHeight: "36px" }}
+            value={"3+ Bedrooms"}
+          >
+            <Radio
+              size="small"
+              color="secondary"
+              sx={{ pl: 0 }}
+              checked={formData.bedrooms?.indexOf("3+ Bedrooms") > -1}
+            />
+            3+ Bedrooms
+          </MenuItem>
+          <MenuItem
+            onClick={() => {
+              handleClose();
+              handleUpdateMobile("4+ Bedrooms");
+            }}
+            sx={{ p: 0, minHeight: "36px" }}
+            value={"4+ Bedrooms"}
+          >
+            <Radio
+              size="small"
+              color="secondary"
+              sx={{ pl: 0 }}
+              checked={formData.bedrooms?.indexOf("4+ Bedrooms") > -1}
+            />
+            4+ Bedrooms
+          </MenuItem>
+          <MenuItem
+            onClick={() => {
+              handleClose();
+              handleUpdateMobile("5+ Bedrooms");
+            }}
+            sx={{ p: 0, minHeight: "36px" }}
+            value={"5+ Bedrooms"}
+          >
+            <Radio
+              size="small"
+              color="secondary"
+              sx={{ pl: 0 }}
+              checked={formData.bedrooms?.indexOf("5+ Bedrooms") > -1}
+            />
+            5+ Bedrooms
+          </MenuItem>
+        </Stack>
+      )}
     </FormControl>
   );
 }

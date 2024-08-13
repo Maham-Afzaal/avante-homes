@@ -9,6 +9,7 @@ import {
   MenuItem,
   InputLabel,
   IconButton,
+  colors,
 } from "@mui/material";
 import TextField from "../common/TextField";
 import SearchIcon from "@mui/icons-material/Search";
@@ -106,6 +107,11 @@ const SearchFrom = () => {
                     paddingTop: "6px",
                     pl: "0px",
                   },
+                  input: {
+                    "&::placeholder": {
+                      fontStyle: "italic",
+                    },
+                  },
                 }}
               />
             </FormControl>
@@ -128,6 +134,11 @@ const SearchFrom = () => {
                     paddingTop: "6px",
                     pl: "0px",
                   },
+                  input: {
+                    "&::placeholder": {
+                      fontStyle: "italic",
+                    },
+                  },
                 }}
               />
             </FormControl>
@@ -144,6 +155,12 @@ const SearchFrom = () => {
               onChange={handleInputChange}
               formData={formData}
               onClear={handleClear}
+              handleUpdateMobile={(value) =>
+                setFormData((prevFormData) => ({
+                  ...prevFormData,
+                  bedrooms: value,
+                }))
+              }
             />
             {/* <Select
               labelid="demo-simple-select-standard-label"

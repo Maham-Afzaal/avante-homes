@@ -470,29 +470,16 @@ const Services = () => {
             height: "100%",
             position: "absolute",
             bottom: { xs: "-100px", sm: "-50px" },
-            zIndex: 9
+            zIndex: 9,
           }}
         ></Box>
-        <Box>
+        <Box sx={{ position: "relative", zIndex: 999 }}>
           <Box>
             <Container>
               <Grid container spacing={{ xs: 3, md: 3 }}>
                 {data.map((item, index) => (
                   <Grid item xs={12} sm={6} md={4}>
-                    <Box
-                      component={"a"}
-                      href={""}
-                      display={"block"}
-                      width={"100%"}
-                      height={"100%"}
-                      sx={{
-                        textDecoration: "none",
-                        transition: "all .2s ease-in-out",
-                        // "&:hover": {
-                        //   transform: `translateY(-${theme.spacing(1 / 2)})`,
-                        // },
-                      }}
-                    >
+                    <Box display={"block"} width={"100%"} height={"100%"}>
                       <Box
                         component={Card}
                         width={"100%"}
@@ -541,17 +528,14 @@ const Services = () => {
                               variant="h3"
                               component={"h3"}
                               fontSize={"26px"}
-                              // textAlign={{ xs: "center", md: "left" }}
                             >
                               {item.title}
                             </Typography>
                             <Typography
-                              className="font-montserrat"
                               color={"text.secondary"}
                               variant="subtitle1"
                               component={"p"}
                               fontSize={"14px"}
-                              // textAlign={{ xs: "center", md: "left" }}
                             >
                               {item.description}
                             </Typography>

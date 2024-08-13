@@ -12,6 +12,7 @@ import {
   Stack,
   Chip,
   Divider,
+  Button,
 } from "@mui/material";
 import Image from "next/image";
 import BackspaceIcon from "@mui/icons-material/KeyboardBackspace";
@@ -49,8 +50,8 @@ const ProductDetailCard = (props) => {
             sx={{
               color: "secondary.main",
               backgroundColor: "#F44A511A",
-              borderRadius: '5px',
-              width: 'fit-content'
+              borderRadius: "5px",
+              width: "fit-content",
             }}
           />
           <Typography
@@ -144,6 +145,11 @@ const ProductDetailCard = (props) => {
               {area}
             </Typography>
           </Stack>
+        </Stack>
+        <Stack sx={{ mt: 1 }}>
+          <Button variant="contained" fullWidth color="secondary">
+            Contact Us For Price
+          </Button>
         </Stack>
       </CardContent>
     </Card>

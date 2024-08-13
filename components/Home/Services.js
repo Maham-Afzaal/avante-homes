@@ -1,8 +1,12 @@
 import { Box, Grid, Paper, Typography, Stack, Card } from "@mui/material";
 import React from "react";
 import TreesBackground from "../../public/trees-background.svg";
+import TreesBackgroundMobile from "../../public/trees-background-mobile.svg";
 import BlueBackground from "../../public/blue-grass-background.svg";
+import BlueBackgroundMobile from "../../public/blue-grass-background-mobile.svg";
 import PersonsBackground from "../../public/persons-background.svg";
+import PersonsBackgroundMobile1 from "../../public/persons-background-mobile-1.svg";
+import PersonsBackgroundMobile2 from "../../public/persons-background-mobile-2.svg";
 import Container from "../common/Container";
 
 const data = [
@@ -450,7 +454,8 @@ const Services = () => {
           pb: 40,
           background: {
             // xs: `url(${backgroundMobile.src}) center`,
-            xs: `url(${PersonsBackground.src}) no-repeat bottom, url(${TreesBackground.src}) no-repeat bottom`,
+            xs: `url(${PersonsBackgroundMobile1.src}) no-repeat bottom left, url(${PersonsBackgroundMobile2.src}) no-repeat bottom right, url(${TreesBackgroundMobile.src}) repeat-x bottom`,
+            sm: `url(${PersonsBackground.src}) no-repeat bottom, url(${TreesBackground.src}) no-repeat bottom`,
           },
           position: "relative",
         }}
@@ -458,35 +463,23 @@ const Services = () => {
         <Box
           sx={{
             background: {
-              // xs: `url(${backgroundMobile.src}) center`,
-              xs: `url(${BlueBackground.src}) no-repeat bottom`,
+              xs: `url(${BlueBackgroundMobile.src}) repeat-x bottom`,
+              sm: `url(${BlueBackground.src}) no-repeat bottom`,
             },
             width: "100%",
             height: "100%",
             position: "absolute",
-            bottom: "-50px",
+            bottom: { xs: "-100px", sm: "-50px" },
+            zIndex: 9,
           }}
         ></Box>
-        <Box>
+        <Box sx={{ position: "relative", zIndex: 999 }}>
           <Box>
             <Container>
               <Grid container spacing={{ xs: 3, md: 3 }}>
                 {data.map((item, index) => (
                   <Grid item xs={12} sm={6} md={4}>
-                    <Box
-                      component={"a"}
-                      href={""}
-                      display={"block"}
-                      width={"100%"}
-                      height={"100%"}
-                      sx={{
-                        textDecoration: "none",
-                        transition: "all .2s ease-in-out",
-                        // "&:hover": {
-                        //   transform: `translateY(-${theme.spacing(1 / 2)})`,
-                        // },
-                      }}
-                    >
+                    <Box display={"block"} width={"100%"} height={"100%"}>
                       <Box
                         component={Card}
                         width={"100%"}
@@ -535,17 +528,14 @@ const Services = () => {
                               variant="h3"
                               component={"h3"}
                               fontSize={"26px"}
-                              // textAlign={{ xs: "center", md: "left" }}
                             >
                               {item.title}
                             </Typography>
                             <Typography
-                              className="font-montserrat"
                               color={"text.secondary"}
                               variant="subtitle1"
                               component={"p"}
                               fontSize={"14px"}
-                              // textAlign={{ xs: "center", md: "left" }}
                             >
                               {item.description}
                             </Typography>

@@ -362,14 +362,23 @@ const Assistance = () => {
             fontSize={{ xs: "32px", sm: "34px", md: "38px", lg: "42px" }}
             textAlign={{ xs: "center" }}
           >
-            How We Assist You To Elevate <br /> Your Experience 
+            How We Assist You To Elevate{" "}
+            <Box
+              sx={{ display: { xs: "contents", sm: "inline-block" } }}
+              component={"br"}
+            />{" "}
+            Your Experience
           </Typography>
         </Stack>
         <Stack>
           <Grid container spacing={{ xs: 3, md: 5 }}>
             {data.map((item, index) => (
               <Grid item xs={12} sm={6} md={4}>
-                <Stack gap={2}>
+                <Stack
+                  gap={2}
+                  alignItems={{ xs: "center", sm: "flex-start" }}
+                  justifyContent={"center"}
+                >
                   <Stack
                     alignItems={"center"}
                     justifyContent={"center"}
@@ -397,7 +406,6 @@ const Assistance = () => {
                     {item.title}
                   </Typography>
                   <Typography
-                    className="font-montserrat"
                     color={"text.secondary"}
                     variant="subtitle1"
                     component={"p"}

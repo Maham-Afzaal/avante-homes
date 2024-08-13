@@ -41,26 +41,46 @@ const SearchFrom = () => {
         maxWidth: { xs: "100%", lg: "944px" },
         borderRadius: "10px",
         boxShadow: "0px 20px 40px 0px #CDCDCD40",
-        width: "100%",
+        width: "-webkit-fill-available",
         position: "relative",
         zIndex: 999,
-        // background: "red",
       }}
       className="home-select"
     >
-      <Box width="104px" height="151px" sx={{ position: "absolute", bottom: "90px", left: 100 }}>
+      <Box
+        width={{ xs: "50px", sm: "104px" }}
+        height={{ xs: "70px", sm: "151px" }}
+        sx={{
+          position: "absolute",
+          bottom: { xs: "auto", sm: "90px" },
+          top: { xs: "-65px", sm: "auto" },
+          left: { xs: 50, sm: 70, md: 100 },
+        }}
+        className="slideInDown"
+      >
         <HomeDog />
       </Box>
-      <Box width="245px" height="124px" sx={{ position: "absolute", bottom: "58px", right: 100 }}>
+      <Box
+        width={{ xs: "118px", sm: "245px" }}
+        height={{ xs: "59px", sm: "124px" }}
+        sx={{
+          position: "absolute",
+          bottom: { xs: "auto", sm: "58px" },
+          top: { xs: "-37px", sm: "auto" },
+          right: { xs: 50, sm: 30, md: 100 },
+          animation: 'myAnim 2s ease 0s 1 normal forwards'
+        }}
+        // className="slideInDown2"
+      >
         <HomeCat />
       </Box>
       <Box component={"form"} onSubmit={handleSubmit} style={{ width: "100%" }}>
         <Stack
-          direction={"row"}
-          alignItems={"center"}
+          alignItems={{ xs: "flex-start", sm: "center" }}
           justifyContent={"center"}
           gap={3}
           width={"100%"}
+          direction={{ xs: "column", sm: "row" }}
         >
           <Stack width={"100%"}>
             <InputLabel sx={{ color: "text.primary" }} id="range-id-label">
@@ -180,7 +200,7 @@ const SearchFrom = () => {
                   width: "72px",
                   bgcolor: "secondary.main",
                   color: "common.white",
-                  borderRadius: "5px",
+                  borderRadius: "10px",
                   "&:hover": {
                     bgcolor: "secondary.main",
                     color: "common.white",

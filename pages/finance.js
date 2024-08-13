@@ -1,6 +1,5 @@
 import React from "react";
-import { Typography, Box, Stack, Grid } from "@mui/material";
-import Container from "@/components/common/Container";
+import { Box } from "@mui/material";
 import Head from "next/head";
 import Finance from "@/components/Finance";
 

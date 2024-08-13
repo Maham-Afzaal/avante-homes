@@ -59,7 +59,7 @@ const Specification = () => {
                           lg: "42px",
                         }}
                         fontWeight={500}
-                        lineHeight={38.4}
+                        lineHeight={'38.4px'}
                       >
                         Floorplan & Specifications
                       </Typography>

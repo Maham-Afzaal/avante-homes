@@ -225,9 +225,6 @@ const Header = (props) => {
                           textTransform: "capitalize",
                           fontSize: "16px",
                           padding: "8px",
-                          "&:hover": {
-                            textDecoration: "underline",
-                          },
                         }}
                         key={item.key}
                         value={item.key}
@@ -312,7 +309,6 @@ const Header = (props) => {
                       color: "primary.main",
                       pl: 1,
                       cursor: "pointer",
-                      "&:hover": { color: "secondary.main" },
                     }}
                     variant="body2"
                   >

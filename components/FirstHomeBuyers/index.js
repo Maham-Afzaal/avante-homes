@@ -4,6 +4,7 @@ import Container from "@/components/common/Container";
 import Image from "next/image";
 import BuyersGuide from "./BuyersGuide";
 import EligibilitySection from "./EligibilitySection";
+import FAQ from "./FAQ";
 
 const PPA = () => {
   return (
@@ -90,6 +91,7 @@ const FirstHomeBuyers = () => {
         <Container>
           <PPA />
         </Container>
+        <FAQ/>
       </Stack>
     </Stack>
   );

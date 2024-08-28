@@ -48,6 +48,7 @@ const YourFuture = () => {
               maxWidth: { lg: "1440px" },
               p: "0px !important",
               position: "relative",
+              width:'99%'
             }}
           >
             <Box
@@ -121,6 +122,7 @@ const YourFuture = () => {
           <Box
             sx={{
               height: "260px",
+              width:'99%',
               background: {
                 xs: `url(${backgroundMobile.src}) bottom no-repeat`,
                 sm: `none`,

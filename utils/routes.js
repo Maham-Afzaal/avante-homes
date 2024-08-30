@@ -21,5 +21,6 @@ export const homeLinks = {
   governmentGrantsAndSchemes: "/government-grants-and-schemes",
   keyStartHomeLoans: "/keystart-home-loans",
 
+  firstHomeBuyers: "/first-home-buyers",
   resolveFinance: "/resolve-finance",
 };

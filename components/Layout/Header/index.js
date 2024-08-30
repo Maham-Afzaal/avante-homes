@@ -39,11 +39,17 @@ const MenuList = [
     icon: <HomeIcon />,
   },
   {
-    key: "display-homes",
-    title: "Display Homes",
-    href: homeLinks,
+    key: "first-home-buyers",
+    title: "First Home Buyers",
+    href: homeLinks.firstHomeBuyers,
     icon: <HomeWorkIcon />,
   },
+  // {
+  //   key: "display-homes",
+  //   title: "Display Homes",
+  //   href: homeLinks,
+  //   icon: <HomeWorkIcon />,
+  // },
   {
     key: "house-and-land",
     title: "House & Land",
@@ -207,7 +213,7 @@ const Header = (props) => {
               <Stack sx={{ display: { xs: "none", md: "block" } }}>
                 <Box sx={{ maxWidth: { xs: 320, sm: 900 } }}>
                   <Tabs
-                    value={"home-design"}
+                    // value={"home-design"}
                     onChange={handleChange}
                     textColor="secondary"
                     variant="scrollable"
@@ -236,12 +242,14 @@ const Header = (props) => {
               </Stack>
               <Stack>
                 <Button
-                  sx={{ display: { xs: "none", md: "block" }, width: "155px" }}
+                  sx={{ display: { xs: "none", md: "block" } }}
+                  // sx={{ display: { xs: "none", md: "block" }, width: "155px" }}
                   size="large"
                   variant="contained"
                   color="secondary"
+                  href="/resolve-finance"
                 >
-                  Get in Touch
+                  Resolve Finance
                 </Button>
                 <IconButton
                   sx={{ display: { xs: "block", md: "none" } }}
@@ -269,7 +277,7 @@ const Header = (props) => {
               direction={"row"}
               justifyContent={"space-between"}
             >
-              <Link href={'/'}>
+              <Link href={"/"}>
                 <Image
                   src="/avante-home-logo.svg"
                   alt="avante home logo"
@@ -305,10 +313,16 @@ const Header = (props) => {
                     {item.icon}
                   </Avatar>
                   <Typography
+                    component="a"
+                    href={item.href}
                     sx={{
                       color: "primary.main",
                       pl: 1,
                       cursor: "pointer",
+                      textDecoration: "none", // Remove underline
+                      "&:hover": {
+                        textDecoration: "none", // Ensure no underline on hover
+                      },
                     }}
                     variant="body2"
                   >
